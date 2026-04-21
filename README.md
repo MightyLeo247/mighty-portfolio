@@ -2,7 +2,7 @@
 
 Welcome to my personal portfolio! This is a high-performance, responsive web application designed to showcase my journey as a Web Developer and Designer.
 
-**Live Demo:** [(https://mightyleo247.github.io/mighty-portfolio/)]
+**Live Demo:** [https://mightyleo247.github.io/mighty-portfolio/]
 
 ---
 
