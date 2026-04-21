@@ -35,10 +35,29 @@ body {
     line-height: 1.6;
 }
 
-h1, h2, h3, .logo {
+h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem, 5vw, 3rem;
+    line-height: 1.2;
+    letter-spacing: 0.5px;
+}
+
+h2, h3, .logo {
     font-family: 'Poppins', sans-serif;
 }
 
+.hero-name {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 700;
+    line-height: 1.2;
+}
+.first {
+    color: #fff;
+}
+
+.last {
+    color: #4db5ff;
+}
 .container {
     max-width: 1100px;
     margin: 0 auto;
@@ -103,31 +122,30 @@ h1, h2, h3, .logo {
 }
 
 
-/* 1. Logo Styling */
+
 .nav-logo {
     height: 45px;
     width: auto;
-    /* Remove the old filter and try this instead */
-    mix-blend-mode: screen; /* This hides the black background of the logo */
+    mix-blend-mode: screen; 
     display: block;
     object-fit: contain;
     transition: transform 0.3s ease;
 }
 
-/* For Light Mode, we want the black back */
+
 [data-theme="light"] .nav-logo {
-    mix-blend-mode: multiply; /* This hides white backgrounds if you switch */
+    mix-blend-mode: multiply; 
 }
 
-/* 3. Hero Picture Styling */
+
 .image-wrapper {
     position: relative;
     max-width: 380px;
     margin: 0 auto;
-    border-radius: 30px; /* Soft rounded corners */
+    border-radius: 30px; 
     overflow: hidden;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5); /* Deep shadow for depth */
-    border: 8px solid rgba(255, 255, 255, 0.05); /* Soft outer frame */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5); 
+    border: 8px solid rgba(255, 255, 255, 0.05); 
       background: rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(10px);
     padding: 10px;
@@ -143,10 +161,10 @@ h1, h2, h3, .logo {
 }
 
 .image-wrapper:hover img {
-    transform: scale(1.05); /* Subtle zoom on hover */
+    transform: scale(1.05); 
 }
 
-/* Hero */
+
 .hero {
     height: 100vh;
     display: flex;
@@ -155,11 +173,10 @@ h1, h2, h3, .logo {
 }
 
 .hero-content h1 {
-    /* min-size, preferred-size (scaling), max-size */
     font-size: clamp(2rem, 9vw, 4.5rem); 
     line-height: 1.1;
-    word-wrap: break-word; /* Important fall-back for long names */
-    max-width: 90%; /* Stops it from hitting the screen edge */
+    word-wrap: break-word; 
+    max-width: 90%; 
 }
 
 .greeting {
@@ -169,17 +186,19 @@ h1, h2, h3, .logo {
 }
 
 #hero h1 {
-    font-size: clamp(1.6rem, 9vw, 4rem); /* Slightly smaller min-size */
+    font-size: clamp(1.5rem, 8vw, 4rem); 
     line-height: 1.1;
-    margin-bottom: 0.5rem;             /* Space between name and title */             /* Tighter lines for large text */
+    margin-bottom: 0.5rem;                    
     hyphens: none;
     word-break: keep-all;
-    overflow-wrap: normal;
+    overflow-wrap: break-word;
+    max-width: 100%;
+    margin: 0 auto;
 }
 
 #hero h2 {
     font-size: clamp(1.2rem, 4vw, 2rem);
-    color: var(--primary); /* Makes "Web Developer" pop */
+    color: var(--primary);
     margin-bottom: 1.5rem;
 }
 .hero-subtext {
@@ -193,7 +212,7 @@ h1, h2, h3, .logo {
 .hero-btns {
     display: flex;
     gap: 1rem;
-    margin-top: 2rem; /* Add this to push it away from the text */
+    margin-top: 2rem; 
 }
 
 .hero-grid {
@@ -342,7 +361,7 @@ h1, h2, h3, .logo {
     margin-bottom: 1rem;
 }
 
-/* Footer */
+
 .footer {
     text-align: center;
     padding: 2rem 0;
@@ -350,22 +369,21 @@ h1, h2, h3, .logo {
     color: var(--text-muted);
 }
 
-/* --- RESPONSIVE TIERS --- */
 
-/* 1. Large Screens / TV (Greater than 1400px) */
+
 @media (min-width: 1400px) {
     .container {
-        max-width: 1300px; /* Let the content breathe more on wide monitors */
+        max-width: 1300px; 
     }
 }
 
-/* 2. Standard Laptops (Below 1100px) */
+
 @media (max-width: 1100px) {
     .container { padding: 0 5%; }
     .contact-grid { gap: 2rem; }
 }
 
-/* 3. Tablets / Small Laptops (Below 992px) */
+
 @media (max-width: 992px) {
     .hero-content { text-align: center; }
     .hero-btns { justify-content: center; }
@@ -373,20 +391,20 @@ h1, h2, h3, .logo {
     .skills-wrapper { grid-template-columns: 1fr 1fr; }
 }
 
-/* 4. Large Mobile / Phablets (Below 768px) */
+
 @media (max-width: 768px) {
     .hero-grid {display: flex; flex-direction: column; align-items: center; text-align: center;}
     .hero-image { margin-bottom: 2rem; max-width: 200px;}
-    .nav-links { display: none; } /* Switch to Hamburger menu logic */
+    .nav-links { display: none; } 
     .hero h1 { margin-top: 1rem; }
-    .project-grid { grid-template-columns: 1fr; } /* Force single column for clarity */
+    .project-grid { grid-template-columns: 1fr; } 
     .contact-grid { grid-template-columns: 1fr; }
 }
 
-/* 5. Small Mobile (Below 480px) */
+
 @media (max-width: 480px) {
     .hero-btns {
-        flex-direction: column; /* Stack buttons so they don't get squished */
+        flex-direction: column; 
         width: 100%;
     }
     .btn { width: 100%; text-align: center; }
@@ -402,6 +420,6 @@ gap: 2rem;
 font-size: 3rem;
 }
 .image-wrapper {
-max-width: 320px; /* Shrink photo slightly so text has more room */
+max-width: 320px; 
 }
 }
