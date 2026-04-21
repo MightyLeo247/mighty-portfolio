@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MightyLeo | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+          <a href="#" class="logo">
+    <img src="./assets/ml-logo.png" alt="MightyLeo Logo" class="nav-logo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Work</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-extras">
+                <button id="theme-toggle" aria-label="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="hamburger">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-image">
+    <div class="image-wrapper">
+        <img src="./assets/mighty-leo-profile.jpeg" alt="Oluwagbenga Olupinla">
+    </div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <p class="greeting">Hi, I am</p>
+                <h1>Oluwagbenga Olupinla</h1>
+                <h2 id="typing-text"></h2>
+                <p class="hero-subtext">I build digital experiences that help businesses grow.</p>
+                <div class="hero-btns">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-outline">Contact Me</a>
+                      <a href="./assets/Olupinla Oluwagbenga Ifemide CV.pdf" class="btn btn-outline" download>
+                        <i class="fas fa-download"></i> Download CV
+                    </a>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>A multi-skilled digital creator focused on building websites, designs, and content strategies that help brands grow. I bridge the gap between complex code and intuitive design.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section bg-alt">
+        <div class="container">
+            <h2 class="section-title">Featured Work</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <div class="project-img" style="background-image: url('./assets/ApexGrid.png')"></div>
+                    <div class="project-info">
+                        <h3>ApexGrid Logistics</h3>
+                        <p>A full-scale service website for a logistics company featuring real-time tracking UI.</p>
+                        <div class="tech-stack">
+                            <span>HTML</span><span>CSS</span><span>JS</span>
+                        </div>
+                        <a href="https://mightyleo247.github.io/apexgrid-logistics/" class="project-link">Live Preview <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img" style="background-image: url('./assets/Quantops.png')"></div>
+                    <div class="project-info">
+                        <h3>Quantops Dashboard</h3>
+                        <p>Enterprise-grade analytics dashboard focusing on clean data visualization and UX.</p>
+                        <div class="tech-stack">
+                            <span>HTML</span><span>CSS</span><span>JS</span>
+                        </div>
+                        <a href="https://mightyleo247.github.io/quantops-dashboard/" class="project-link">Live Preview <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img" style="background-image: url('./assets/Eventlow.png')"></div>
+                    <div class="project-info">
+                        <h3>EventFlow Portal</h3>
+                        <p>A seamless registration system with dynamic ticket generation and local storage.</p>
+                        <div class="tech-stack">
+                            <span>HTML</span><span>CSS</span><span>JS</span>
+                        </div>
+                        <a href="https://mightyleo247.github.io/event-registration-portal/" class="project-link">Live Preview <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title">Expertise</h2>
+            <div class="skills-wrapper">
+                <div class="skill-category">
+                    <h3><i class="fas fa-code"></i> Web Dev</h3>
+                    <div class="skill-list">
+                        <span class="skill-badge">HTML5</span>
+                        <span class="skill-badge">CSS3</span>
+                        <span class="skill-badge">JavaScript</span>
+                        <span class="skill-badge">Responsive Design</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-pen-nib"></i> Design</h3>
+                    <div class="skill-list">
+                        <span class="skill-badge">Canva</span>
+                        <span class="skill-badge">Branding</span>
+                        <span class="skill-badge">Logo Design</span>
+                        <span class="skill-badge">UI/UX</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-bullhorn"></i> Content & SMM</h3>
+                    <div class="skill-list">
+                        <span class="skill-badge">Storytelling</span>
+                        <span class="skill-badge">Growth Strategy</span>
+                        <span class="skill-badge">Planning</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section bg-alt">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                <p>Ready to grow your business?</p>
+                    <a href="mailto:olupinlaoluwagbenga@gmail.com"> olupinlaoluwagbenga@gmail.com
+                    </a>
+                    <br><br>
+                    <a href="https://wa.link/6tsrgq" class="btn btn-outline" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                    </a>
+                    <br><br>
+                    <div class="socials">
+                        <a href="https://github.com/MightyLeo247"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <form id="contact-form" class="contact-form" action="https://formspree.io/f/mvzdbpjq
+" method="POST">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2024 MightyLeo. Designed & Built with <i class="fas fa-heart"></i></p>
+    </footer>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>
+

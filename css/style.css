@@ -1,0 +1,407 @@
+:root {
+    --bg: #0f172a;
+    --bg-alt: #1e293b;
+    --text: #f8fafc;
+    --text-muted: #94a3b8;
+    --primary: #38bdf8;
+    --primary-hover: #7dd3fc;
+    --card-border: #334155;
+    --nav-bg: rgba(15, 23, 42, 0.9);
+}
+
+[data-theme="light"] {
+    --bg: #f1f5f9;
+    --bg-alt: #ffffff;
+    --text: #0f172a;
+    --text-muted: #64748b;
+    --primary: #0284c7;
+    --primary-hover: #0369a1;
+    --card-border: #e2e8f0;
+    --nav-bg: rgba(241, 245, 249, 0.9);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    transition: background 0.3s ease, color 0.3s ease;
+    line-height: 1.6;
+}
+
+h1, h2, h3, .logo {
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: var(--nav-bg);
+    backdrop-filter: blur(10px);
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--card-border);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 2rem;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--text);
+}
+
+.logo span { color: var(--primary); }
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover { color: var(--primary); }
+
+.nav-extras {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+#theme-toggle {
+    background: none;
+    border: none;
+    color: var(--text);
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+
+/* 1. Logo Styling */
+.nav-logo {
+    height: 45px;
+    width: auto;
+    /* Remove the old filter and try this instead */
+    mix-blend-mode: screen; /* This hides the black background of the logo */
+    display: block;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+/* For Light Mode, we want the black back */
+[data-theme="light"] .nav-logo {
+    mix-blend-mode: multiply; /* This hides white backgrounds if you switch */
+}
+
+/* 3. Hero Picture Styling */
+.image-wrapper {
+    position: relative;
+    max-width: 380px;
+    margin: 0 auto;
+    border-radius: 30px; /* Soft rounded corners */
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5); /* Deep shadow for depth */
+    border: 8px solid rgba(255, 255, 255, 0.05); /* Soft outer frame */
+      background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    padding: 10px;
+     mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+}
+
+.image-wrapper img {
+    width: 100%;
+    border-radius: 20px;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.image-wrapper:hover img {
+    transform: scale(1.05); /* Subtle zoom on hover */
+}
+
+/* Hero */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 80px;
+}
+
+.hero-content h1 {
+    /* min-size, preferred-size (scaling), max-size */
+    font-size: clamp(2rem, 9vw, 4.5rem); 
+    line-height: 1.1;
+    word-wrap: break-word; /* Important fall-back for long names */
+    max-width: 90%; /* Stops it from hitting the screen edge */
+}
+
+.greeting {
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+#hero h1 {
+    font-size: clamp(1.6rem, 9vw, 4rem); /* Slightly smaller min-size */
+    line-height: 1.1;
+    margin-bottom: 0.5rem;             /* Space between name and title */             /* Tighter lines for large text */
+    hyphens: none;
+    word-break: keep-all;
+    overflow-wrap: normal;
+}
+
+#hero h2 {
+    font-size: clamp(1.2rem, 4vw, 2rem);
+    color: var(--primary); /* Makes "Web Developer" pop */
+    margin-bottom: 1.5rem;
+}
+.hero-subtext {
+    max-width: 600px;
+    margin: 1.5rem 0 2.5rem;
+    font-size: 1.1rem;
+    color: var(--text-muted);
+}
+
+
+.hero-btns {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem; /* Add this to push it away from the text */
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    align-items: center;
+    min-height: 80vh;
+}
+
+/* Buttons */
+.btn {
+    padding: 0.8rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.btn i {
+    margin-right: 8px;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: #0f172a;
+    border: none;
+}
+
+.btn-primary:hover { background-color: var(--primary-hover); transform: translateY(-2px); }
+
+.btn-outline {
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.btn-outline:hover { background: rgba(56, 189, 248, 0.1); }
+
+/* Projects */
+.section { padding: 6rem 0; }
+.bg-alt { background-color: var(--bg-alt); }
+.section-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: clamp(2rem, 8vw, 4rem);
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background: var(--bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.project-card:hover { transform: translateY(-10px); }
+
+.project-img {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+}
+
+.project-info { padding: 1.5rem; }
+
+.tech-stack {
+    display: flex;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.tech-stack span {
+    font-size: 0.75rem;
+    background: var(--bg-alt);
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    color: var(--primary);
+}
+
+.project-link {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* Skills */
+.skills-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.skill-category h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+.skill-badge {
+    background: var(--bg-alt);
+    border: 1px solid var(--card-border);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+}
+
+/* Contact */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 1rem;
+    background: var(--bg);
+    border: 1px solid var(--card-border);
+    color: var(--text);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 2rem 0;
+    border-top: 1px solid var(--card-border);
+    color: var(--text-muted);
+}
+
+/* --- RESPONSIVE TIERS --- */
+
+/* 1. Large Screens / TV (Greater than 1400px) */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1300px; /* Let the content breathe more on wide monitors */
+    }
+}
+
+/* 2. Standard Laptops (Below 1100px) */
+@media (max-width: 1100px) {
+    .container { padding: 0 5%; }
+    .contact-grid { gap: 2rem; }
+}
+
+/* 3. Tablets / Small Laptops (Below 992px) */
+@media (max-width: 992px) {
+    .hero-content { text-align: center; }
+    .hero-btns { justify-content: center; }
+    .about-grid { grid-template-columns: 1fr; }
+    .skills-wrapper { grid-template-columns: 1fr 1fr; }
+}
+
+/* 4. Large Mobile / Phablets (Below 768px) */
+@media (max-width: 768px) {
+    .hero-grid {display: flex; flex-direction: column; align-items: center; text-align: center;}
+    .hero-image { margin-bottom: 2rem; max-width: 200px;}
+    .nav-links { display: none; } /* Switch to Hamburger menu logic */
+    .hero h1 { margin-top: 1rem; }
+    .project-grid { grid-template-columns: 1fr; } /* Force single column for clarity */
+    .contact-grid { grid-template-columns: 1fr; }
+}
+
+/* 5. Small Mobile (Below 480px) */
+@media (max-width: 480px) {
+    .hero-btns {
+        flex-direction: column; /* Stack buttons so they don't get squished */
+        width: 100%;
+    }
+    .btn { width: 100%; text-align: center; }
+    .skills-wrapper { grid-template-columns: 1fr; }
+    .logo { font-size: 1.2rem; }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+.hero-grid {
+gap: 2rem;
+}
+#hero h1 {
+font-size: 3rem;
+}
+.image-wrapper {
+max-width: 320px; /* Shrink photo slightly so text has more room */
+}
+}
